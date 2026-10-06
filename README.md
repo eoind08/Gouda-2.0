@@ -13,7 +13,7 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 
 
 ### PRETRAINED MODELS - Name (Parameters / Tokens)
-| Task | Ricotta-2.0 (24m / 20.7B) | Gruyère-2.0 (63m / 9.7B) | Gouda-2.0 (132m / 5.6B) | Cheddar-2.0 (302m / 2.8B) |
+| Task | Ricotta-2.0 (24m / 20.70B) | Gruyère-2.0 (63m / 8.99B) | Gouda-2.0 (132m / 5.60B) | Cheddar-2.0 (302m / ~2.8B) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.213 +- 0.006 |0.248 +- 0.020 | 0.266 +- 0.006 | — |
 | PIQA | 0.596 +- 0.011 | 0.620 +- 0.011 | 0.626 +- 0.011 | — |
@@ -29,8 +29,8 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 | TruthfulQA (MC2) | 0.454 +- 0.015 | 0.422 +- 0.015 | 0.411 +- 0.015 | — |
 | WikiText (PPL ↓) | 77.9 | 44.8 | 38.9 | — |
 
-### INSTRUCT MODELS
-| Task | Ricotta-2.0-Instruct | Gruyère-2.0-Instruct | Gouda-2.0-Instruct | Cheddar-2.0-Instruct |
+### INSTRUCT MODELS - Name (Parameters / SFT Tokens)
+| Task | Ricotta-2.0-Instruct (24m / 64.7m) | Gruyère-2.0-Instruct (63m / 64.7m) | Gouda-2.0-Instruct (132m / 64.7m) | Cheddar-2.0-Instruct (302m / ~64.7m) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.231 +- 0.006 | 0.265 +- 0.006 | 0.292 +- 0.006 | — |
 | PIQA | 0.603 +- 0.011 | 0.613 +- 0.011 | 0.633 +- 0.011 | — |
