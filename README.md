@@ -31,16 +31,16 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 ### INSTRUCT MODELS
 | Task | Ricotta-2.0-Instruct | Gruyère-2.0-Instruct | Gouda-2.0-Instruct | Cheddar-2.0-Instruct |
 |---|---:|---:|---:|---:|
-| LAMBADA (OpenAI) | — | — | — | — |
-| PIQA | — | — | — | — |
-| WinoGrande | — | — | — | — |
-| WSC | — | — | — | — |
-| ARC - Easy | — | — | — | — |
-| ARC - Challenge | — | — | — | — |
-| SciQ | — | — | — | — |
-| HellaSwag | — | — | — | — |
-| OpenBookQA | — | — | — | — |
-| BoolQ | — | — | — | — |
-| COPA | — | — | — | — |
-| TruthfulQA (MC2) | — | — | — | — |
-| WikiText (PPL ↓) | — | — | — | — |
+| LAMBADA (OpenAI) | — | 0.265 +- 0.006 | 0.292 +- 0.006 | — |
+| PIQA | — | 0.613 +- 0.011 | 0.633 +- 0.011 | — |
+| WinoGrande | - | 0.505 +- 0.014 | 0.524 +- 0.014 | — |
+| WSC | — | 0.549 +- 0.030 | 0.520 +- 0.030 | — |
+| ARC - Easy | — | 0.428 +- 0.010 | 0.418 +- 0.010 | — |
+| ARC - Challenge | — | 0.236 +- 0.012 | 0.270 +- 0.013 | — |
+| SciQ | — | 0.628 +- 0.015 | 0.626 +- 0.015 | — |
+| HellaSwag | — | 0.307 +- 0.005 | 0.328 +- 0.005 | — |
+| OpenBookQA | — | 0.298 +- 0.020 | 0.314 +- 0.021 | — |
+| BoolQ | — | 0.608 +- 0.009 | 0.523 +- 0.009 | — |
+| COPA | — | 0.6 +- 0.049 | 0.6 +- 0.049 | — |
+| TruthfulQA (MC2) | — | 0.411 +- 0.015 | 0.393 +- 0.015 | — |
+| WikiText (PPL ↓) | — | 52.6 | 44.5 | — |
