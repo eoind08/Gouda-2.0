@@ -1,4 +1,4 @@
-# Gruyère-2.0 | params=62943616 | epochs=0.88 | steps=17142 | batch_tokens=524288 | compile=True
+# Gruyere-2.0 | params=62943616 | epochs=0.88 | steps=17142 | batch_tokens=524288 | compile=True
 1 train epoch=0.00005134 loss=10.46486568 shard=42 shard_progress=0.00524288 tokens=524288 lr=1.4619883041e-06 muon_lr=8.7719298246e-05 norm=9.95047665 tok_sec=79939.11 dt=6.558592 vram_gb=10.8259
 2 train epoch=0.00010268 loss=10.41043472 shard=42 shard_progress=0.01048576 tokens=1048576 lr=2.9239766082e-06 muon_lr=1.7543859649e-04 norm=9.85124493 tok_sec=152696.19 dt=3.433537 vram_gb=11.1153
 3 train epoch=0.00015401 loss=10.31037521 shard=42 shard_progress=0.01572864 tokens=1572864 lr=4.3859649123e-06 muon_lr=2.6315789474e-04 norm=9.34488201 tok_sec=152732.84 dt=3.432713 vram_gb=11.1153
