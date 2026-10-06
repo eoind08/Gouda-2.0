@@ -1,15 +1,17 @@
 # Gouda-2.0
 Gouda-2.0 is the second generation family of models from GoudaAI all trained in less than 24 GPU hours (on a 4090 rtx). We release 4 open models ranging from 24m-302m parameters:
-- Ricotta-2.0 (24m) - huggingface.co/
-- Gruyere-2.0 (63m) - huggingface.co/
-- Gouda-2.0 (132m) - huggingface.co/
+- Ricotta-2.0 (24m) - [huggingface](https://huggingface.co/GoudaAI)
+- Gruyere-2.0 (63m) - [huggingface](https://huggingface.co/GoudaAI)
+- Gouda-2.0 (132m) - [huggingface](https://huggingface.co/GoudaAI)
 - Cheddar-2.0 (302m) (IN PROGRESS)
 
 And their instruct versions:
-- Ricotta-2.0-Instruct - huggingface.co/
-- Gruyere-2.0-Instruct - huggingface.co/
-- Gouda-2.0-Instruct - huggingface.co/
+- Ricotta-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI)
+- Gruyere-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI)
+- Gouda-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI)
 - Cheddar-2.0-Instruct (IN PROGRESS)
+
+Instruct versions are avaliable for chat on [gouda-ai](https://gouda-ai.vercel.app)
 
 ## Pre Training
 Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger. For pre-training we targeted a conservative 18 hour run. Pretraining occurred on a 4090 RTX:
