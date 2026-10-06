@@ -12,8 +12,8 @@ Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the
 Across evaluation benchmarks, the gouda both pretrained and instruct models display results comparable to models of a similar size despite having a substantially smaller token-base.
 
 
-### PRETRAINED MODELS
-| Task | Ricotta-2.0 | Gruyère-2.0 | Gouda-2.0 | Cheddar-2.0 |
+### PRETRAINED MODELS - Name (Parameters / Tokens)
+| Task | Ricotta-2.0 (24m / 20.7B) | Gruyère-2.0 (63m / 9.7B) | Gouda-2.0 (132m / 5.6B) | Cheddar-2.0 (302m / 2.8B) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.213 +- 0.006 |0.248 +- 0.020 | 0.266 +- 0.006 | — |
 | PIQA | 0.596 +- 0.011 | 0.620 +- 0.011 | 0.626 +- 0.011 | — |
