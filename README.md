@@ -5,8 +5,8 @@ Gouda-2.0 is the second generation family of models from GoudaAI all trained in 
 - Gouda (132m)
 - Cheddar (302m) (IN PROGRESS)
 
-## 24 GPU Hours
-Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger. For pre-training we targeted a conservative 18 hour run. Pretraining occurred on a 4090 RTX with SFT on a 3080 RTX:
+## Pre Training
+Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger. For pre-training we targeted a conservative 18 hour run. Pretraining occurred on a 4090 RTX:
 
 | Model                     | Parameters (m) | Tokens (m) | GPU Time (h) | Final Validation Loss |
 |---------------------------|----------------|------------|--------------|-----------------------|
@@ -15,6 +15,15 @@ Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the
 | Gouda-2.0                 | 132.2          | 5,597      | 17.82        | 2.85                  |
 | Cheddar-2.0 (In Progress) | 302            | -          | -            | -                     |
 
+## SFT
+SFT took place on a fixed 0.25 epoch run of UltraChat-200k with 20% decay, this run was trained on a 3080 RTX. Overall, UltraChat was likely a poor choice, long conversations are not necessarily suitable for such small models. Later generations of Gouda will use Smol-Smoltalk, designed specifically for small models. Below are the GPU times, final val loss and tokens for each model:
+
+| Model                     | Parameters (m) | Tokens (m) | GPU Time (h) | Final Validation Loss |
+|---------------------------|----------------|------------|--------------|-----------------------|
+| Ricotta-2.0               | 24.1           | 64.7       | 0.167        | 2.09                  |
+| Gruyere-2.0               | 62.9           | 64.7       | 0.334        | 1.84                  |
+| Gouda-2.0                 | 132.2          | 64.7       | 0.583        | 1.73                  |
+| Cheddar-2.0 (In Progress) | 302            | -          | -            | -                     |
 
 ## Eval Results
 Across evaluation benchmarks, the gouda both pretrained and instruct models display results comparable to models of a similar size despite having a substantially smaller token-base.
