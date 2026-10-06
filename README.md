@@ -3,7 +3,7 @@ Gouda-2.0 is the second generation family of models from GoudaAI all trained in 
 - Ricotta (24m)
 - Gruyere (63m)
 - Gouda (132m)
-- Cheddar (302m)
+- Cheddar (302m) (IN PROGRESS)
 
 ## 24 GPU Hours
 Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger
@@ -32,16 +32,16 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 ### INSTRUCT MODELS
 | Task | Ricotta-2.0-Instruct | Gruyère-2.0-Instruct | Gouda-2.0-Instruct | Cheddar-2.0-Instruct |
 |---|---:|---:|---:|---:|
-| LAMBADA (OpenAI) | — | 0.265 +- 0.006 | 0.292 +- 0.006 | — |
-| PIQA | — | 0.613 +- 0.011 | 0.633 +- 0.011 | — |
-| WinoGrande | - | 0.505 +- 0.014 | 0.524 +- 0.014 | — |
-| WSC | — | 0.549 +- 0.030 | 0.520 +- 0.030 | — |
-| ARC - Easy | — | 0.428 +- 0.010 | 0.418 +- 0.010 | — |
-| ARC - Challenge | — | 0.236 +- 0.012 | 0.270 +- 0.013 | — |
-| SciQ | — | 0.628 +- 0.015 | 0.626 +- 0.015 | — |
-| HellaSwag | — | 0.307 +- 0.005 | 0.328 +- 0.005 | — |
-| OpenBookQA | — | 0.298 +- 0.020 | 0.314 +- 0.021 | — |
-| BoolQ | — | 0.608 +- 0.009 | 0.523 +- 0.009 | — |
-| COPA | — | 0.6 +- 0.049 | 0.6 +- 0.049 | — |
-| TruthfulQA (MC2) | — | 0.411 +- 0.015 | 0.393 +- 0.015 | — |
-| WikiText (PPL ↓) | — | 52.6 | 44.5 | — |
+| LAMBADA (OpenAI) | 0.231 +- 0.006 | 0.265 +- 0.006 | 0.292 +- 0.006 | — |
+| PIQA | 0.603 +- 0.011 | 0.613 +- 0.011 | 0.633 +- 0.011 | — |
+| WinoGrande | 0.515 +- 0.014 | 0.505 +- 0.014 | 0.524 +- 0.014 | — |
+| WSC | 0.520 +- 0.030 | 0.549 +- 0.030 | 0.520 +- 0.030 | — |
+| ARC - Easy | 0.393 +- 0.010 | 0.428 +- 0.010 | 0.418 +- 0.010 | — |
+| ARC - Challenge | 0.230 +- 0.012 | 0.236 +- 0.012 | 0.270 +- 0.013 | — |
+| SciQ | 0.568 +- 0.016 | 0.628 +- 0.015 | 0.626 +- 0.015 | — |
+| HellaSwag | 0.282 +- 0.004 | 0.307 +- 0.005 | 0.328 +- 0.005 | — |
+| OpenBookQA | 0.282 +- 0.020 | 0.298 +- 0.020 | 0.314 +- 0.021 | — |
+| BoolQ | 0.516 +- 0.009 | 0.608 +- 0.009 | 0.523 +- 0.009 | — |
+| COPA | 0.58 +- 0.050 | 0.6 +- 0.049 | 0.6 +- 0.049 | — |
+| TruthfulQA (MC2) | 0.434 +- 0.015 | 0.411 +- 0.015 | 0.393 +- 0.015 | — |
+| WikiText (PPL ↓) | 89.9 | 52.6 | 44.5 | — |
