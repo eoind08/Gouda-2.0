@@ -6,7 +6,15 @@ Gouda-2.0 is the second generation family of models from GoudaAI all trained in 
 - Cheddar (302m) (IN PROGRESS)
 
 ## 24 GPU Hours
-Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger
+Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger. For pre-training we targeted a conservative 18 hour run. Pretraining occurred on a 4090 RTX with SFT on a 3080 RTX:
+
+| Model                     | Parameters (m) | Tokens (m) | GPU Time (h) | Final Validation Loss |
+|---------------------------|----------------|------------|--------------|-----------------------|
+| Ricotta-2.0               | 24.1           | 20,701     | 16.94        | 3.21                  |
+| Gruyere-2.0               | 62.9           | 8,987      | 16.50        | 2.96                  |
+| Gouda-2.0                 | 132.2          | 5,597      | 17.82        | 2.85                  |
+| Cheddar-2.0 (In Progress) | 302            | -          | -            | -                     |
+
 
 ## Eval Results
 Across evaluation benchmarks, the gouda both pretrained and instruct models display results comparable to models of a similar size despite having a substantially smaller token-base.
