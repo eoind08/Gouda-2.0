@@ -21,7 +21,7 @@ Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the
 | Ricotta-2.0               | 24.1           | 20,701     | 16.94        | 3.21                  |
 | Gruyere-2.0               | 62.9           | 8,987      | 16.50        | 2.96                  |
 | Gouda-2.0                 | 132.2          | 5,597      | 17.82        | 2.85                  |
-| Cheddar-2.0 (In Progress) | 302            | -          | -            | -                     |
+| Cheddar-2.0 (In Progress) | 302.1          | 2,809      | 17.97        | 2.88                  |
 
 ## SFT
 SFT took place on a fixed 0.25 epoch run of UltraChat-200k with 20% decay, this run was trained on a 3080 RTX. Overall, UltraChat was likely a poor choice, long conversations are not necessarily suitable for such small models. Later generations of Gouda will use Smol-Smoltalk, designed specifically for small models. Below are the GPU times, final val loss and tokens for each model:
@@ -38,24 +38,24 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 
 
 ### PRETRAINED MODELS - Name (Parameters / Tokens)
-| Task | Ricotta-2.0 (24m / 20.70B) | Gruyère-2.0 (63m / 8.99B) | Gouda-2.0 (132m / 5.60B) | Cheddar-2.0 (302m / ~2.8B) |
+| Task | Ricotta-2.0 (24m / 20.70B) | Gruyère-2.0 (63m / 8.99B) | Gouda-2.0 (132m / 5.60B) | Cheddar-2.0 (302m / 2.8B) |
 |---|---:|---:|---:|---:|
-| LAMBADA (OpenAI) | 0.213 +- 0.006 |0.248 +- 0.020 | 0.266 +- 0.006 | — |
-| PIQA | 0.596 +- 0.011 | 0.620 +- 0.011 | 0.626 +- 0.011 | — |
-| WinoGrande | 0.513 +- 0.014 | 0.522 +- 0.014 | 0.512 +- 0.014 | — |
-| WSC | 0.535 +- 0.03 | 0.535 +- 0.030 | 0.553 +- 0.030 | — |
-| ARC - Easy | 0.403 +- 0.010 | 0.439 +- 0.010 | 0.458 +- 0.010 | — |
-| ARC - Challenge | 0.226 +- 0.012 | 0.242 +- 0.013 | 0.255 +- 0.013 | — |
-| SciQ | 0.612 +- 0.015 | 0.644 +- 0.015 | 0.669 +- 0.015 | — |
-| HellaSwag | 0.283 +- 0.004 | 0.312 +- 0.005 | 0.326 +- 0.005 | — |
-| OpenBookQA | 0.286 +- 0.020 | 0.284 +- 0.020 | 0.294 +- 0.020 | — |
-| BoolQ | 0.490 +- 0.009 | 0.607 +- 0.009 | 0.546 +- 0.009 | — |
-| COPA | 0.57 +- 0.050 | 0.62 +- 0.049 | 0.66 +- 0.048 | — |
-| TruthfulQA (MC2) | 0.454 +- 0.015 | 0.422 +- 0.015 | 0.411 +- 0.015 | — |
-| WikiText (PPL ↓) | 77.9 | 44.8 | 38.9 | — |
+| LAMBADA (OpenAI) | 0.213 +- 0.006 |0.248 +- 0.020 | 0.266 +- 0.006 | 0.262 +- 0.006 |
+| PIQA | 0.596 +- 0.011 | 0.620 +- 0.011 | 0.626 +- 0.011 | 0.624 +- 0.011 |
+| WinoGrande | 0.513 +- 0.014 | 0.522 +- 0.014 | 0.512 +- 0.014 | 0.515 +- 0.014 |
+| WSC | 0.535 +- 0.03 | 0.535 +- 0.030 | 0.553 +- 0.030 | 0.520 +- 0.030 |
+| ARC - Easy | 0.403 +- 0.010 | 0.439 +- 0.010 | 0.458 +- 0.010 | 0.459 +- 0.010 |
+| ARC - Challenge | 0.226 +- 0.012 | 0.242 +- 0.013 | 0.255 +- 0.013 | 0.257 +- 0.013 |
+| SciQ | 0.612 +- 0.015 | 0.644 +- 0.015 | 0.669 +- 0.015 | 0.654 +- 0.015 |
+| HellaSwag | 0.283 +- 0.004 | 0.312 +- 0.005 | 0.326 +- 0.005 | 0.327 +- 0.005 |
+| OpenBookQA | 0.286 +- 0.020 | 0.284 +- 0.020 | 0.294 +- 0.020 | 0.316 +- 0.021 |
+| BoolQ | 0.490 +- 0.009 | 0.607 +- 0.009 | 0.546 +- 0.009 | 0.571 +- 0.009 |
+| COPA | 0.57 +- 0.050 | 0.62 +- 0.049 | 0.66 +- 0.048 | 0.600 +- 0.049 |
+| TruthfulQA (MC2) | 0.454 +- 0.015 | 0.422 +- 0.015 | 0.411 +- 0.015 | 0.413 + 0.015 |
+| WikiText (PPL ↓) | 77.9 | 44.8 | 38.9 | 38.9 |
 
 ### INSTRUCT MODELS - Name (Parameters / SFT Tokens)
-| Task | Ricotta-2.0-Instruct (24m / 64.7m) | Gruyère-2.0-Instruct (63m / 64.7m) | Gouda-2.0-Instruct (132m / 64.7m) | Cheddar-2.0-Instruct (302m / ~64.7m) |
+| Task | Ricotta-2.0-Instruct (24m / 64.7m) | Gruyère-2.0-Instruct (63m / 64.7m) | Gouda-2.0-Instruct (132m / 64.7m) | Cheddar-2.0-Instruct (302m / 64.7m) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.231 +- 0.006 | 0.265 +- 0.006 | 0.292 +- 0.006 | — |
 | PIQA | 0.603 +- 0.011 | 0.613 +- 0.011 | 0.633 +- 0.011 | — |
