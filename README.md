@@ -55,7 +55,7 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 | WikiText (PPL ↓) | 77.9 | 44.8 | 38.9 | 38.9 |
 
 ### INSTRUCT MODELS - Name (Parameters / SFT Tokens)
-| Task | Ricotta-2.0-Instruct (24m / 64.7m) | Gruyère-2.0-Instruct (63m / 64.7m) | Gouda-2.0-Instruct (132m / 64.7m) | Cheddar-2.0-Instruct (302m / 64.7m) |
+| Task | Ricotta-2.0-Instruct (24m / 64.7m) | Gruyère-2.0-Instruct (63m / 64.7m) | Gouda-2.0-Instruct (132m / 64.7m) | Cheddar-2.0-Instruct (302m / 64.6m) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.231 +- 0.006 | 0.265 +- 0.006 | 0.292 +- 0.006 | 0.283 +- 0.006 |
 | PIQA | 0.603 +- 0.011 | 0.613 +- 0.011 | 0.633 +- 0.011 | 0.643 +- 0.011 |
