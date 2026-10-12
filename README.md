@@ -33,6 +33,11 @@ SFT took place on a fixed 0.25 epoch run of UltraChat-200k with 20% decay, this 
 | Gouda-2.0                 | 132.2          | 64.7       | 0.583        | 1.73                  |
 | Cheddar-2.0               | 302            | 64.6       | 1.325        | 1.74                  |
 
+## Gouda-2.1
+For 2.1 there will be 2 major changes:
+- Dataset: Since Gouda-0.0.1, we have used the same 10b token dataset of fineweb-edu (as done by Andrej Karparthy). Of course the logical idea may be to simply extend it to a 20b corpus or larger however whilst we are no longer imposing a strict 18 hour training target, it would be preferable to have a smaller amount of high quality data rather than blasted the models with billions of tokens. As such we are moving to a custom 10b token corpus made up of more specific datasets to hopefully produce better factual recall and ability, at the potential sacrifice of coherence and linguistic ability.
+- SFT & DPO: For the instruct models we have previously only used a randomly selected 50k conversations from UltraChat-200k as more conversations produced a degrading affect on the models eval scores and a tendency to default to "Sorry I cannot do X". For 2.1 we plan to use Smol-Smoltalk specifically designed for models around the Gouda suite size followed by DPO on UltraFeedback. More research will need to be done into the use of Smol-Smoltalk as early experiments on Ricotta-2.0 found worse benchmark and qualiative results when compared with Ricotta-2.0-Instruct (UltraChat)
+
 ## Eval Results
 Across evaluation benchmarks, the gouda both pretrained and instruct models display results comparable to models of a similar size despite having a substantially smaller token-base.
 
