@@ -45,7 +45,7 @@ For 2.1 there will be 2 major changes:
 ## Eval Results
 Across evaluation benchmarks, the gouda both pretrained and instruct models display results comparable to models of a similar size despite having a substantially smaller token-base.
 
-## Gouda-2.0 (132m, 5.6B tokens) vs Pythia-160m (300B tokens), raw_acc
+### Gouda-2.0 (132m, 5.6B tokens) vs Pythia-160m (300B tokens), raw_acc
 | Task          | Gouda-2.0 | Pythia-160m | Gap  |
 |---------------|-----------|-------------|------|
 | ARC-Easy      | .511      | .435        | +7.6 |
