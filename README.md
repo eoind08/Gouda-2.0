@@ -13,6 +13,10 @@ And their instruct versions:
 
 Instruct versions are avaliable for chat on [gouda-ai](https://gouda-ai.vercel.app)
 
+Training Code is available here: 
+- Source Code: [eoind08/GoudaCore-v2](https://github.com/eoind08/GoudaCore-v2)
+- SFT Code: [eoind08/UltrachatSFT-gouda](https://github.com/eoind08/UltrachatSFT-gouda)
+
 ## Pre Training
 Each model had a self-imposed 24 GPU hour limit meaning the number of tokens the model sees gets smaller as the models get larger. For pre-training we targeted a conservative 18 hour run. Pretraining occurred on a 4090 RTX:
 
