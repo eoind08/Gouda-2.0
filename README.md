@@ -1,6 +1,6 @@
 # Gouda-2.0
 
-[![gouda-2-0-banner.png](https://i.postimg.cc/Wb9jY2sV/gouda-2-0-banner.png)](https://postimg.cc/D8bt83Wp)
+[![gouda-2-0-banner.png](https://i.postimg.cc/G35qXN6M/gouda-2-0-banner.png)](https://postimg.cc/JtjNnTrJ)
 
 Gouda-2.0 is the second generation family of models from GoudaAI all trained in less than 24 GPU hours (on a 4090 rtx). We release 4 open models ranging from 24m-302m parameters:
 - Ricotta-2.0 (24m) - [huggingface](https://huggingface.co/GoudaAI)
