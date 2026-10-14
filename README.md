@@ -142,6 +142,7 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | PIQA          | .600      | .595        | +0.5 |
 | WinoGrande    | .513      | .528        | -1.5 |
 | LAMBADA       | .213      | .185        | +2.8 |
+| | | | avg: +3.3 |
 
 #### Gruyere-2.0 (63m, 9B tokens) vs Pythia-70m (300B tokens) - Closest Pythia Model, raw_acc
 | Task          | Ricotta-2.0 | Pythia-70m | Gap  |
@@ -152,6 +153,7 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | PIQA          | .626      | .595        | +2.9 |
 | WinoGrande    | .521      | .528        | -0.7 |
 | LAMBADA       | .248      | .185        | +6.3 |
+| | | | avg: +5.9 |
 
 #### Gouda-2.0 (132m, 5.6B tokens) vs Pythia-160m (300B tokens), raw_acc
 | Task          | Gouda-2.0 | Pythia-160m | Gap  |
@@ -162,6 +164,7 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | PIQA          | .629      | .627        | +0.2 |
 | WinoGrande    | .512      | .531        | -1.9 |
 | LAMBADA       | .266      | .328        | -6.2 |
+| | | | avg: +4.8 |
 
 #### Cheddar-2.0 (302m, 5.6B tokens) vs Pythia-410m (300B tokens) - Closest Pythia Model, raw_acc
 | Task          | Gouda-2.0 | Pythia-160m | Gap  |
@@ -172,6 +175,7 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | PIQA          | .631      | .668        | -3.7 |
 | WinoGrande    | .515      | .537        | -2.2 |
 | LAMBADA       | .262      | .516        | -25.4 |
+| | | | avg: -5.9 (-1.7 exc LAMBADA) |
 
 
 ### Pretrained Models - Name (Parameters / Tokens)
