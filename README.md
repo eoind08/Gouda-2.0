@@ -25,7 +25,7 @@ For Pretrained models:
 ```python
 # pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
-checkpoint = "GoudaAI/Cheddar-2.0"
+checkpoint = "GoudaAI/[MODEL]-2.0"
 device = "cuda" # for GPU usage or "cpu" for CPU usage
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 # for multiple GPUs install accelerate and do `model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map="auto")`
@@ -38,7 +38,7 @@ For Instruct models:
 ```python
 # pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
-checkpoint = "GoudaAI/Gouda-2.0-Instruct"
+checkpoint = "GoudaAI/[MODEL]-2.0-Instruct"
 device = "cuda" # for GPU usage or "cpu" for CPU usage
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 # for multiple GPUs install accelerate and do `model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map="auto")`
