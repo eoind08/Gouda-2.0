@@ -145,7 +145,7 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | | | | avg: +3.3 |
 
 #### Gruyere-2.0 (63m, 9B tokens) vs Pythia-70m (300B tokens) - Closest Pythia Model, raw_acc
-| Task          | Ricotta-2.0 | Pythia-70m | Gap  |
+| Task          | Gruyere-2.0 | Pythia-70m | Gap  |
 |---------------|-----------|-------------|------|
 | ARC-Easy      | .494      | .374        | +12.0 |
 | ARC-Challenge | .186      | .181        | +0.5 |
@@ -166,8 +166,8 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | LAMBADA       | .266      | .328        | -6.2 |
 | | | | avg: +0.8 |
 
-#### Cheddar-2.0 (302m, 5.6B tokens) vs Pythia-410m (300B tokens) - Closest Pythia Model, raw_acc
-| Task          | Gouda-2.0 | Pythia-160m | Gap  |
+#### Cheddar-2.0 (302m, 2.8B tokens) vs Pythia-410m (300B tokens) - Closest Pythia Model, raw_acc
+| Task          | Cheddar-2.0 | Pythia-160m | Gap  |
 |---------------|-----------|-------------|------|
 | ARC-Easy      | .518      | .521        | -0.3 |
 | ARC-Challenge | .222      | .213        | +0.9 |
