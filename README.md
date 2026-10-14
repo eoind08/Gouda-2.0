@@ -3,16 +3,16 @@
 [![gouda-2-0-banner.png](https://i.postimg.cc/G35qXN6M/gouda-2-0-banner.png)](https://postimg.cc/JtjNnTrJ)
 
 Gouda-2.0 is the second generation family of models from GoudaAI all trained in less than 24 GPU hours (on a 4090 rtx). We release 4 open models ranging from 24m-302m parameters:
-- Ricotta-2.0 (24m) - [huggingface](https://huggingface.co/GoudaAI)
-- Gruyere-2.0 (63m) - [huggingface](https://huggingface.co/GoudaAI)
-- Gouda-2.0 (132m) - [huggingface](https://huggingface.co/GoudaAI)
-- Cheddar-2.0 (302m) [huggingface](https://huggingface.co/GoudaAI)
+- Ricotta-2.0 (24m) - [huggingface](https://huggingface.co/GoudaAI/Ricotta-2.0)
+- Gruyere-2.0 (63m) - [huggingface](https://huggingface.co/GoudaAI/Gruyere-2.0)
+- Gouda-2.0 (132m) - [huggingface](https://huggingface.co/GoudaAI/Gouda-2.0)
+- Cheddar-2.0 (302m) [huggingface](https://huggingface.co/GoudaAI/Cheddar-2.0)
 
 And their instruct versions:
-- Ricotta-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI)
-- Gruyere-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI)
-- Gouda-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI)
-- Cheddar-2.0-Instruct [huggingface](https://huggingface.co/GoudaAI)
+- Ricotta-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI/Ricotta-2.0-Instruct)
+- Gruyere-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI/Gruyere-2.0-Instruct)
+- Gouda-2.0-Instruct - [huggingface](https://huggingface.co/GoudaAI/Gouda-2.0-Instruct)
+- Cheddar-2.0-Instruct [huggingface](https://huggingface.co/GoudaAI/Cheddar-2.0-Instruct)
 
 Instruct versions are avaliable for chat on [gouda-ai](https://gouda-ai.vercel.app)
 
