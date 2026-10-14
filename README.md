@@ -2,7 +2,22 @@
 
 [![gouda-2-0-banner.png](https://i.postimg.cc/G35qXN6M/gouda-2-0-banner.png)](https://postimg.cc/JtjNnTrJ)
 
-Gouda-2.0 is the second generation family of models from GoudaAI all trained in less than 24 GPU hours (on a 4090 rtx). We release 4 open models ranging from 24m-302m parameters:
+Gouda-2.0 is the second generation family of models from GoudaAI all trained in less than 24 GPU hours (on a 4090 rtx).
+
+## Table of Contents
+- [Model Links](#model-links)
+- [Brief Analysis](#brief-analysis)
+- [Quick Start](#quick-start)
+- [Pretraining](#pre-training)
+- [SFT](#sft)
+- [Eval Results](#eval-results)
+  * [Comparison to Pythia](#comparison-to-pythia)
+  * [Pretrained](pretrained-models---name-parameters--tokens)
+  * [SFT](pretrained-models---name-parameters--tokens)
+
+## Model Links
+
+We release 4 open models ranging from 24m-302m parameters:
 - Ricotta-2.0 (24m) - [huggingface](https://huggingface.co/GoudaAI/Ricotta-2.0)
 - Gruyere-2.0 (63m) - [huggingface](https://huggingface.co/GoudaAI/Gruyere-2.0)
 - Gouda-2.0 (132m) - [huggingface](https://huggingface.co/GoudaAI/Gouda-2.0)
@@ -19,6 +34,43 @@ Instruct versions are avaliable for chat on [gouda-ai](https://gouda-ai.vercel.a
 Training Code is available here: 
 - Source Code: [eoind08/GoudaCore-v2](https://github.com/eoind08/GoudaCore-v2)
 - SFT Code: [eoind08/UltrachatSFT-gouda](https://github.com/eoind08/UltrachatSFT-gouda)
+
+## Brief Analysis
+
+Whilst most models hold training tokens constant when making a model family, we opted to use GPU hours as our constant (mostly for cost reasons). As you can see from below, our training hour targets were not always met, often due to slightly underestimating the toks/sec of the GPU. Below is a graph of rough compute (6ND) against loss:
+![ComputeLoss.png](https://github.com/eoind08/Gouda-2.0/blob/main/Graphs-Images/ComputeLoss.png)
+
+This graphs shows an interesting concept, it suggests that training cheddar for less time would increase its ability which is obviously nonsense. However we can extract that for a fixed 18 hour run, gouda is near the optimum with around 140m and 5.4b tokens being our graphs minimum. This is of course not truly an empirical claim as Cheddar could have been a step too far and a model in between around 20 toks/param as Chinchilla theorises would be even further optimal, perhaps testing would occur in the future.
+
+![ToksPerParam.png](https://github.com/eoind08/Gouda-2.0/blob/main/Graphs-Images/Toksperparam.png)
+
+We can attempt to derive a formula for the best model size and token count for a fixed number GPU hours on a 4090:
+
+using a log-log regression with our recorded toks/sec we find a function for Toks/sec ($T$): $T(N_{params}) = 3.959 * 10^6 N ^{-0.7885}$
+
+This achieves $R^2 \approx 0.9993$
+
+For $H$ GPU hours, the number of tokens ($D$) is given by $D=3600H*T(N)$
+
+Applying our theoretically optimal ratio of 40 toks/param (although evidence is there to suggest its lower)
+
+$D = 40N * 10^6$
+
+Equating we get $40N * 10^6 = 3600H(3.959 * 10^6 N ^ {-0.7885})$
+
+Therefore
+
+$N_{opt} = (356.3H)^0.5591$ million
+
+$D_{opt} = 0.04N_opt$ billion
+
+where $N_opt$ is the parameter count and $D_opt$ is the token count
+
+Using Hoffman's general loss formula from Chinchilla research, we can rearrange for GPU hours to get:
+
+$N_{opt}(H) = [\frac{\alpha A}{b\beta B}(3600aH)^\beta]^{\frac{1}{\alpha+b\beta}}$
+
+$D_{opt}(H) = 3600Ha[N_{opt}(H)]^{-b}$
 
 ## Quick Start
 For Pretrained models:
@@ -78,7 +130,30 @@ For 2.1 there will be 2 major changes:
 ## Eval Results
 Across evaluation benchmarks, the gouda both pretrained and instruct models display results comparable to models of a similar size despite having a substantially smaller token-base.
 
-### Gouda-2.0 (132m, 5.6B tokens) vs Pythia-160m (300B tokens), raw_acc
+### Comparison to Pythia
+Below is a comparison of the pretrained models to their closest pythia counterpart. Gouda models range from 14.5x less trained to over 107x less trained when compared with their Pythia counterpart. Results show very strong comparability beating Pythia comfortably on many benchmarks, however gouda loses consistently on WinoGrande
+
+#### Ricotta-2.0 (24m, 20.7B tokens) vs Pythia-70m (300B tokens) - Closest Pythia Model, raw_acc
+| Task          | Ricotta-2.0 | Pythia-70m | Gap  |
+|---------------|-----------|-------------|------|
+| ARC-Easy      | .452      | .374        | +7.8 |
+| ARC-Challenge | .188      | .181        | +0.7 |
+| SciQ          | .695      | .601        | +9.4 |
+| PIQA          | .600      | .595        | +0.5 |
+| WinoGrande    | .513      | .528        | -1.5 |
+| LAMBADA       | .213      | .185        | +2.8 |
+
+#### Gruyere-2.0 (63m, 9B tokens) vs Pythia-70m (300B tokens) - Closest Pythia Model, raw_acc
+| Task          | Ricotta-2.0 | Pythia-70m | Gap  |
+|---------------|-----------|-------------|------|
+| ARC-Easy      | .494      | .374        | +12.0 |
+| ARC-Challenge | .186      | .181        | +0.5 |
+| SciQ          | .743      | .601        | +14.2 |
+| PIQA          | .626      | .595        | +2.9 |
+| WinoGrande    | .521      | .528        | -0.7 |
+| LAMBADA       | .248      | .185        | +6.3 |
+
+#### Gouda-2.0 (132m, 5.6B tokens) vs Pythia-160m (300B tokens), raw_acc
 | Task          | Gouda-2.0 | Pythia-160m | Gap  |
 |---------------|-----------|-------------|------|
 | ARC-Easy      | .511      | .435        | +7.6 |
@@ -88,8 +163,18 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 | WinoGrande    | .512      | .531        | -1.9 |
 | LAMBADA       | .266      | .328        | -6.2 |
 
+#### Cheddar-2.0 (302m, 5.6B tokens) vs Pythia-410m (300B tokens) - Closest Pythia Model, raw_acc
+| Task          | Gouda-2.0 | Pythia-160m | Gap  |
+|---------------|-----------|-------------|------|
+| ARC-Easy      | .518      | .521        | -0.3 |
+| ARC-Challenge | .222      | .213        | +0.9 |
+| SciQ          | .762      | .811        | -4.9 |
+| PIQA          | .631      | .668        | -3.7 |
+| WinoGrande    | .515      | .537        | -2.2 |
+| LAMBADA       | .262      | .516        | -25.4 |
 
-### PRETRAINED MODELS - Name (Parameters / Tokens)
+
+### Pretrained Models - Name (Parameters / Tokens)
 | Task | Ricotta-2.0 (24m / 20.70B) | Gruyère-2.0 (63m / 8.99B) | Gouda-2.0 (132m / 5.60B) | Cheddar-2.0 (302m / 2.8B) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.213 +- 0.006 |0.248 +- 0.020 | 0.266 +- 0.006 | 0.262 +- 0.006 |
@@ -106,7 +191,7 @@ Across evaluation benchmarks, the gouda both pretrained and instruct models disp
 | TruthfulQA (MC2) | 0.454 +- 0.015 | 0.422 +- 0.015 | 0.411 +- 0.015 | 0.413 + 0.015 |
 | WikiText (PPL ↓) | 77.9 | 44.8 | 38.9 | 38.9 |
 
-### INSTRUCT MODELS - Name (Parameters / SFT Tokens)
+### Instruct Models - Name (Parameters / SFT Tokens)
 | Task | Ricotta-2.0-Instruct (24m / 64.7m) | Gruyère-2.0-Instruct (63m / 64.7m) | Gouda-2.0-Instruct (132m / 64.7m) | Cheddar-2.0-Instruct (302m / 64.6m) |
 |---|---:|---:|---:|---:|
 | LAMBADA (OpenAI) | 0.231 +- 0.006 | 0.265 +- 0.006 | 0.292 +- 0.006 | 0.283 +- 0.006 |
