@@ -164,7 +164,7 @@ Below is a comparison of the pretrained models to their closest pythia counterpa
 | PIQA          | .629      | .627        | +0.2 |
 | WinoGrande    | .512      | .531        | -1.9 |
 | LAMBADA       | .266      | .328        | -6.2 |
-| | | | avg: +4.8 |
+| | | | avg: +0.8 |
 
 #### Cheddar-2.0 (302m, 5.6B tokens) vs Pythia-410m (300B tokens) - Closest Pythia Model, raw_acc
 | Task          | Gouda-2.0 | Pythia-160m | Gap  |
