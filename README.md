@@ -12,8 +12,8 @@ Gouda-2.0 is the second generation family of models from GoudaAI all trained in 
 - [SFT](#sft)
 - [Eval Results](#eval-results)
   * [Comparison to Pythia](#comparison-to-pythia)
-  * [Pretrained](pretrained-models---name-parameters--tokens)
-  * [SFT](pretrained-models---name-parameters--tokens)
+  * [Pretrained](#pretrained-models---name-parameters--tokens)
+  * [SFT](#pretrained-models---name-parameters--tokens)
 
 ## Model Links
 
